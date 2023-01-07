@@ -1,9 +1,11 @@
 import axios from "axios";
 
 export const createNewTimeCheck = async (data: string) => {
-    const { data: response } = await axios.post('https://open-aitc-backend.vercel.app/find-complexity',{
+    console.log(data);
+    const res = await axios.post('https://h6fgptwzm0.execute-api.ap-southeast-2.amazonaws.com/Dev',{
         "prompt": data,
-    }
+
+    }, 
     );
-    return response.data;
+    return res;
     };
