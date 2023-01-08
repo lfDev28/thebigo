@@ -14,11 +14,11 @@ const CodeBlock: React.FC<{}> = (): JSX.Element => {
 
   const { mutate, isLoading } = useMutation(createNewTimeCheck, {
     onSuccess: (tc) => {
-      if (tc.data.length === 0) {
+      if (tc.length === 0) {
         setError('There was an error calculating the time complexity');
         setData('');
       }
-      setData(tc.data);
+      setData(tc);
     },
     onError: () => {
       alert('there was an error');
